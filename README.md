@@ -1,6 +1,6 @@
 # mysql-modeldb
-mysql database for ml modeldb
-### mysql as database for ml modeldb is coming
+
+### mysql as database for MIT ml modeldb is coming
 
 CREATE DATABASE modeldb_test  CHARACTER SET utf8 COLLATE utf8_bin;
 
@@ -11,14 +11,18 @@ flush privileges;
 use modeldb_test
 source src/main/resources/mysql/createDB_new.sql
 
-Dear:
-Hi, the office modeldb use sqlite as database ,but it can not use in product enviroment,so I have to tab and edit the office code let it can support to mysql,so many days ,I have done it,thx for modeldb and jooq ,less time do it.
+### Dear:
 
-  now the modeldb  server separate  can support mysql and sqlite both time that anyone you would use ,I add the springboot framework, you also can add some monitor and distribute mode like consul eurika and hystrix zuul,anything also
-anyone want to use it ,can git clone
-https://github.com/mullerhai/mysql-modeldb/tree/master
-if you like ,please mark a star thx
+###       Hi, the office modeldb use sqlite as database ,but it can not use in product enviroment,so I have to tab and edit the office code let it can support  to mysql,so many days ,I have done it,thx for modeldb and jooq ,less time do it.
 
+###       now the modeldb  server separate  can support mysql and sqlite both time that anyone you would use ,I add the springboot framework, you also can add some monitor and distribute mode like consul eurika and hystrix zuul,anything also
+
+
+####      anyone want to use it ,can git clone 
+####   https://github.com/mullerhai/mysql-modeldb/tree/master
+if you like ,please mark  a star thx
+
+2018-10-24
 muller
 
 
