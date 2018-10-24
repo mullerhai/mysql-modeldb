@@ -20,7 +20,7 @@ source src/main/resources/mysql/createDB_new.sql
 
 ####      anyone want to use it ,can git clone 
 ####   https://github.com/mullerhai/mysql-modeldb/tree/master
-if you like ,please mark  a star thx
+if you like ,maybe mark  a star is better thx
 
 2018-10-24
 muller
