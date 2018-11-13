@@ -202,7 +202,7 @@ DROP TABLE IF EXISTS LinearModel;
 CREATE TABLE LinearModel (
     id int PRIMARY KEY AUTO_INCREMENT,
     -- This is the linear model.
-    model  int  NOT NULL,
+    model  int  ,
     foreign key(model)  REFERENCES Transformer(id),
 -- The root mean squared error.
 rmse DOUBLE,
@@ -218,7 +218,7 @@ DROP TABLE IF EXISTS LinearModelTerm;
 CREATE TABLE LinearModelTerm (
     id int PRIMARY KEY AUTO_INCREMENT,
     -- This is the linear model.
-    model  int  NOT NULL,
+    model  int  ,
    foreign key( model)  REFERENCES Transformer(id),
 -- The index of the term. If this is 0, it's the intercept term.
 termIndex int NOT NULL,
@@ -237,7 +237,7 @@ DROP TABLE IF EXISTS ModelObjectiveHistory;
 CREATE TABLE ModelObjectiveHistory (
     id int PRIMARY KEY AUTO_INCREMENT,
     -- This is the linear model.
-    model  int  NOT NULL,
+    model  int  ,
    foreign key( model )  REFERENCES Transformer(id),
 -- The iteration number.
 iteration int NOT NULL,
@@ -288,7 +288,7 @@ featureIndex int NOT NULL,
 -- (Depends on transformer type)
 importance DOUBLE NOT NULL,
 -- The transformer that should utilize this feature
-transformer  int  NOT NULL,
+transformer  int  ,
 foreign key(transformer )  REFERENCES Transformer(id)
 )engine=InnoDB default charset=utf8 auto_increment=1;
 CREATE INDEX  FeatureIndexTransformer ON Feature(transformer);
@@ -326,7 +326,7 @@ CREATE TABLE TreeNode (
   impurity DOUBLE NOT NULL, -- Impurity of node.
   gain DOUBLE, -- Information gain at node. NULL for leaf nodes.
   splitIndex int, -- Index of feature that the internal node is splitting. NULL if this is a leaf node.
- rootNode int  NOT NULL,
+ rootNode int  ,
  foreign key( rootNode)  REFERENCES TreeNode(id) -- NULL for the root node
 )engine=InnoDB default charset=utf8 auto_increment=1;
 
@@ -353,7 +353,7 @@ modelType text NOT NULL -- Should be "Decision Tree", "GBT", or "Random Forest"
 DROP TABLE IF EXISTS TreeModelComponent;
 CREATE TABLE TreeModelComponent (
   id int PRIMARY KEY AUTO_INCREMENT,
-  model int  NOT NULL,
+  model int  ,
   foreign key(model )  REFERENCES Transformer(id),
 componentIndex int NOT NULL,
 componentWeight DOUBLE NOT NULL,
@@ -480,17 +480,18 @@ DROP TABLE IF EXISTS AnnotationFragment;
 CREATE TABLE AnnotationFragment (
   id int PRIMARY KEY AUTO_INCREMENT,
   annotation  int  NOT NULL,
-  transformer int  NOT NULL,
-  DataFrame int  NOT NULL,
-  spec int  NOT NULL,
+  fragmentIndex int NOT NULL,
+type text NOT NULL,
+  transformer int  ,
+  DataFrame int  ,
+  spec int  ,
+  message text,
   experimentRun int  NOT NULL,
   foreign key(annotation)  REFERENCES Annotation(id)  ,
-fragmentIndex int NOT NULL,
-type text NOT NULL,
 foreign key(transformer ) REFERENCES Transformer(id),
 foreign key(DataFrame)  REFERENCES DataFrame(id),
 foreign key(spec ) REFERENCES TransformerSpec(id),
-message text,
+
 foreign key(experimentRun)  REFERENCES ExperimentRun(id)  
 )engine=InnoDB default charset=utf8 auto_increment=1;
 
