@@ -1,7 +1,7 @@
 package edu.mit.csail.db.ml.server.storage;
 
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.records.PipelinestageRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.records.PipelinestageRecord;
 import modeldb.*;
 import org.jooq.DSLContext;
 

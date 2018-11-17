@@ -1,11 +1,11 @@
 package edu.mit.csail.db.ml.server.storage;
 
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.Dataframe;
-import jooq.sqlite.gen.tables.records.DataframeRecord;
-import jooq.sqlite.gen.tables.records.EventRecord;
-import jooq.sqlite.gen.tables.records.TransformerRecord;
-import jooq.sqlite.gen.tables.records.TransformeventRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.Dataframe;
+import jooq.mysql.gen.tables.records.DataframeRecord;
+import jooq.mysql.gen.tables.records.EventRecord;
+import jooq.mysql.gen.tables.records.TransformerRecord;
+import jooq.mysql.gen.tables.records.TransformeventRecord;
 import modeldb.*;
 import org.jooq.DSLContext;
 
@@ -13,7 +13,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static jooq.sqlite.gen.Tables.TRANSFORMEVENT;
+import static jooq.mysql.gen.Tables.TRANSFORMEVENT;
 
 /**
  * This class contains logic for storing and reading transformation events in the database.

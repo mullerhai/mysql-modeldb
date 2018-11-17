@@ -2,8 +2,8 @@ package edu.mit.csail.db.ml.server.algorithm.similarity;
 
 import edu.mit.csail.db.ml.server.algorithm.similarity.comparators.*;
 import edu.mit.csail.db.ml.server.storage.TransformerDao;
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.records.LinearmodelRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.records.LinearmodelRecord;
 import modeldb.BadRequestException;
 import modeldb.ModelCompMetric;
 import modeldb.ResourceNotFoundException;

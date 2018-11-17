@@ -1,10 +1,10 @@
 package edu.mit.csail.db.ml.server.storage;
 
-//import jooq.sqlite.gen.Tables;
-//import jooq.sqlite.gen.tables.records.ExperimentRecord;
+//import jooq.mysql.gen.Tables;
+//import jooq.mysql.gen.tables.records.ExperimentRecord;
 
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.records.ExperimentRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.records.ExperimentRecord;
 import modeldb.Experiment;
 import modeldb.ExperimentEvent;
 import modeldb.ExperimentEventResponse;

@@ -1,7 +1,7 @@
 package edu.mit.csail.db.ml.util.duplicator;
 
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.records.TransformeventRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.records.TransformeventRecord;
 import org.jooq.DSLContext;
 import org.jooq.InsertValuesStep7;
 import org.jooq.Query;

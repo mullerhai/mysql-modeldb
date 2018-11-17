@@ -1,8 +1,8 @@
 package edu.mit.csail.db.ml.server.storage;
 
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.records.HyperparameterRecord;
-import jooq.sqlite.gen.tables.records.TransformerspecRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.records.HyperparameterRecord;
+import jooq.mysql.gen.tables.records.TransformerspecRecord;
 import modeldb.HyperParameter;
 import modeldb.ResourceNotFoundException;
 import modeldb.TransformerSpec;

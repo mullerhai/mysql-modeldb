@@ -1,9 +1,9 @@
 package edu.mit.csail.db.ml.server.storage;
 
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.records.EventRecord;
-import jooq.sqlite.gen.tables.records.GridcellcrossvalidationRecord;
-import jooq.sqlite.gen.tables.records.GridsearchcrossvalidationeventRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.records.EventRecord;
+import jooq.mysql.gen.tables.records.GridcellcrossvalidationRecord;
+import jooq.mysql.gen.tables.records.GridsearchcrossvalidationeventRecord;
 import modeldb.*;
 import org.jooq.DSLContext;
 

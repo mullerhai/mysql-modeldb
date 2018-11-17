@@ -2,8 +2,8 @@ package edu.mit.csail.db.ml.server.algorithm;
 
 import edu.mit.csail.db.ml.server.storage.TransformerDao;
 import edu.mit.csail.db.ml.util.Pair;
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.records.LinearmodelRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.records.LinearmodelRecord;
 import modeldb.*;
 import org.apache.commons.math.MathException;
 import org.apache.commons.math.distribution.TDistribution;

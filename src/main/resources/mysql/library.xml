@@ -2,7 +2,7 @@
 <configuration>
   <jdbc>
     <driver>com.mysql.jdbc.Driver</driver>
-    <url>jdbc:mysql://localhost:3306/modeldb_test?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;rewriteBatchedStatements=TRUE&amp;useSSL=false&amp;serverTimezone=UTC</url>
+    <url>jdbc:mysql://cdhcode:3306/modeldb_test?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true&amp;rewriteBatchedStatements=TRUE&amp;useSSL=false&amp;serverTimezone=UTC</url>
     <user>muller</user>
     <password>7104</password>
     <database>modeldb_test</database>
@@ -63,7 +63,7 @@
     <target>
       <!-- The destination package of your generated classes (within the
            destination directory) -->
-      <packageName>jooq.sqlite.gen</packageName>
+      <packageName>jooq.mysql.gen</packageName>
 
       <!-- The destination directory of your generated classes -->
       <directory>../src/main/java</directory>

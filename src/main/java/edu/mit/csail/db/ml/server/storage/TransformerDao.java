@@ -3,9 +3,9 @@ package edu.mit.csail.db.ml.server.storage;
 import edu.mit.csail.db.ml.conf.ModelDbConfig;
 import edu.mit.csail.db.ml.util.Pair;
 import edu.mit.csail.db.ml.server.storage.metadata.MetadataDb;
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.records.FiteventRecord;
-import jooq.sqlite.gen.tables.records.TransformerRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.records.FiteventRecord;
+import jooq.mysql.gen.tables.records.TransformerRecord;
 import modeldb.*;
 import org.jooq.DSLContext;
 import org.jooq.Record1;
@@ -13,7 +13,7 @@ import org.jooq.Record1;
 import java.nio.file.Paths;
 import java.util.*;
 
-import static jooq.sqlite.gen.Tables.TRANSFORMER;
+import static jooq.mysql.gen.Tables.TRANSFORMER;
 
 /**
  * This class contains logic for reading and storing Transformers in the database.

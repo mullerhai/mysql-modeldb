@@ -1,10 +1,10 @@
 package edu.mit.csail.db.ml.server.storage;
 
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.records.DataframeRecord;
-import jooq.sqlite.gen.tables.records.DataframecolumnRecord;
-import jooq.sqlite.gen.tables.records.DataframemetadataRecord;
-import jooq.sqlite.gen.tables.records.MetadatakvRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.records.DataframeRecord;
+import jooq.mysql.gen.tables.records.DataframecolumnRecord;
+import jooq.mysql.gen.tables.records.DataframemetadataRecord;
+import jooq.mysql.gen.tables.records.MetadatakvRecord;
 import modeldb.DataFrame;
 import modeldb.DataFrameColumn;
 import modeldb.MetadataKV;
@@ -13,10 +13,10 @@ import org.jooq.DSLContext;
 
 import java.util.List;
 
-import static jooq.sqlite.gen.Tables.DATAFRAME;
-import static jooq.sqlite.gen.Tables.DATAFRAMECOLUMN;
-import static jooq.sqlite.gen.Tables.METADATAKV;
-import static jooq.sqlite.gen.Tables.DATAFRAMEMETADATA;
+import static jooq.mysql.gen.Tables.DATAFRAME;
+import static jooq.mysql.gen.Tables.DATAFRAMECOLUMN;
+import static jooq.mysql.gen.Tables.METADATAKV;
+import static jooq.mysql.gen.Tables.DATAFRAMEMETADATA;
 
 /**
  * This class contains logic for storing and reading DataFrames.

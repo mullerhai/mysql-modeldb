@@ -1,10 +1,10 @@
 package edu.mit.csail.db.ml.server.storage;
 
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.records.FeatureRecord;
-import jooq.sqlite.gen.tables.records.LinearmodelRecord;
-import jooq.sqlite.gen.tables.records.LinearmodeltermRecord;
-import jooq.sqlite.gen.tables.records.ModelobjectivehistoryRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.records.FeatureRecord;
+import jooq.mysql.gen.tables.records.LinearmodelRecord;
+import jooq.mysql.gen.tables.records.LinearmodeltermRecord;
+import jooq.mysql.gen.tables.records.ModelobjectivehistoryRecord;
 import modeldb.LinearModel;
 import modeldb.LinearModelTerm;
 import modeldb.ResourceNotFoundException;

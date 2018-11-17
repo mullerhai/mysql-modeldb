@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * This is a command line program that basically copies all the rows in all the tables of a ModelDB SQLite database
+ * This is a command line program that basically copies all the rows in all the tables of a ModelDB mysql database
  * a specified number of times.
  *
  * You basically execute as follows:
@@ -21,7 +21,7 @@ import java.util.List;
  * Also, since the row may have foreign keys that point to rows in other tables, those rows must be copied first (and
  * given their own new primary keys).
  *
- * The path to the SQLite file is specified in the default configuration file that ModelDbConfig uses.
+ * The path to the mysql file is specified in the default configuration file that ModelDbConfig uses.
  */
 public class DuplicatorMain {
   public static void main(String[] args) throws Exception {

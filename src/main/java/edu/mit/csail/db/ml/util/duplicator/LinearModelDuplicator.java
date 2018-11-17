@@ -1,8 +1,8 @@
 
 package edu.mit.csail.db.ml.util.duplicator;
 
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.records.LinearmodelRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.records.LinearmodelRecord;
 import org.jooq.DSLContext;
 import org.jooq.InsertValuesStep5;
 import org.jooq.Query;

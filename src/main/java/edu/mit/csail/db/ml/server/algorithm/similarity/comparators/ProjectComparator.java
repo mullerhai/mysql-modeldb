@@ -2,7 +2,7 @@ package edu.mit.csail.db.ml.server.algorithm.similarity.comparators;
 
 import edu.mit.csail.db.ml.server.algorithm.similarity.ModelComparator;
 import edu.mit.csail.db.ml.server.storage.ExperimentRunDao;
-import jooq.sqlite.gen.Tables;
+import jooq.mysql.gen.Tables;
 import org.jooq.Condition;
 import org.jooq.DSLContext;
 import org.jooq.Record1;

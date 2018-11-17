@@ -1,7 +1,7 @@
 package edu.mit.csail.db.ml.server.algorithm;
 
 import edu.mit.csail.db.ml.server.storage.ProblemTypeConverter;
-import jooq.sqlite.gen.Tables;
+import jooq.mysql.gen.Tables;
 import modeldb.ProblemType;
 import org.jooq.DSLContext;
 

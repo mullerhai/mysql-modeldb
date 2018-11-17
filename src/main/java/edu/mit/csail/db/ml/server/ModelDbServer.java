@@ -7,7 +7,7 @@ import edu.mit.csail.db.ml.server.storage.*;
 import edu.mit.csail.db.ml.server.storage.metadata.MetadataDb;
 import edu.mit.csail.db.ml.util.ContextFactory;
 import edu.mit.csail.db.ml.util.ExceptionWrapper;
-import jooq.sqlite.gen.tables.records.DataframeRecord;
+import jooq.mysql.gen.tables.records.DataframeRecord;
 import modeldb.*;
 import org.apache.thrift.TException;
 import org.jooq.DSLContext;

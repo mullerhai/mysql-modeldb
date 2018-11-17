@@ -1,7 +1,7 @@
 package edu.mit.csail.db.ml.server.storage;
 
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.records.EventRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.records.EventRecord;
 import modeldb.ResourceNotFoundException;
 import org.jooq.Condition;
 import org.jooq.DSLContext;
@@ -9,7 +9,7 @@ import org.jooq.Record1;
 
 import java.util.Arrays;
 
-import static jooq.sqlite.gen.Tables.EVENT;
+import static jooq.mysql.gen.Tables.EVENT;
 
 /**
  * Contains logic for storing and reading Events (i.e. entries in the Event table). For most of the events that

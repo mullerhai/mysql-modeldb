@@ -1,7 +1,7 @@
 package edu.mit.csail.db.ml.server.algorithm;
 
 import edu.mit.csail.db.ml.util.Pair;
-import jooq.sqlite.gen.Tables;
+import jooq.mysql.gen.Tables;
 import modeldb.CompareHyperParametersResponse;
 import modeldb.ResourceNotFoundException;
 import modeldb.StringPair;

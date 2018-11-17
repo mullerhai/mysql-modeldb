@@ -1,10 +1,10 @@
 package edu.mit.csail.db.ml.server.storage;
 
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.records.DataframeRecord;
-import jooq.sqlite.gen.tables.records.DataframesplitRecord;
-import jooq.sqlite.gen.tables.records.EventRecord;
-import jooq.sqlite.gen.tables.records.RandomspliteventRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.records.DataframeRecord;
+import jooq.mysql.gen.tables.records.DataframesplitRecord;
+import jooq.mysql.gen.tables.records.EventRecord;
+import jooq.mysql.gen.tables.records.RandomspliteventRecord;
 import modeldb.*;
 import org.jooq.DSLContext;
 

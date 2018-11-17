@@ -2,11 +2,11 @@ package edu.mit.csail.db.ml.server.algorithm;
 
 import edu.mit.csail.db.ml.server.storage.*;
 import edu.mit.csail.db.ml.util.Pair;
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.records.DataframeRecord;
-import jooq.sqlite.gen.tables.records.TransformerRecord;
-import jooq.sqlite.gen.tables.records.TransformerspecRecord;
-import jooq.sqlite.gen.tables.records.TransformeventRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.records.DataframeRecord;
+import jooq.mysql.gen.tables.records.TransformerRecord;
+import jooq.mysql.gen.tables.records.TransformerspecRecord;
+import jooq.mysql.gen.tables.records.TransformeventRecord;
 import modeldb.*;
 import org.jooq.DSLContext;
 import org.jooq.Record1;

@@ -1,10 +1,10 @@
 package edu.mit.csail.db.ml.server.storage;
 
-import jooq.sqlite.gen.Tables;
-import jooq.sqlite.gen.tables.records.DataframeRecord;
-import jooq.sqlite.gen.tables.records.EventRecord;
-import jooq.sqlite.gen.tables.records.MetriceventRecord;
-import jooq.sqlite.gen.tables.records.TransformerRecord;
+import jooq.mysql.gen.Tables;
+import jooq.mysql.gen.tables.records.DataframeRecord;
+import jooq.mysql.gen.tables.records.EventRecord;
+import jooq.mysql.gen.tables.records.MetriceventRecord;
+import jooq.mysql.gen.tables.records.TransformerRecord;
 import modeldb.MetricEvent;
 import modeldb.MetricEventResponse;
 import org.jooq.DSLContext;
