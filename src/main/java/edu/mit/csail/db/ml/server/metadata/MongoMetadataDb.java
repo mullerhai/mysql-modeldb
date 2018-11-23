@@ -14,29 +14,43 @@ import com.mongodb.util.JSON;
 import com.mongodb.WriteResult;
 import com.mongodb.WriteConcernException;
 import org.joda.time.DateTime;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MongoMetadataDb implements edu.mit.csail.db.ml.server.storage.metadata.MetadataDb {
 
+  protected  final Logger logger=LoggerFactory.getLogger(MongoMetadataDb.class);
+  @Autowired
   private MongoClient mongoClient;
+
   private DB metadataDb;
   private String host;
   private int port;
+
+  @Value("${spring.data.mongodb.database}")
   private String dbName;
+
   public static final String COLLECTION_NAME = "model_metadata";
   public static final String MODELID_KEY = "MODELDB_model_id";
 
-  public MongoMetadataDb(String host, int port, String dbName) {
-    this.host = host;
-    this.port = port;
-    this.dbName = dbName;
-  }
+//  public MongoMetadataDb(String host, int port, String dbName) {
+//    this.host = host;
+//    this.port = port;
+//    this.dbName = dbName;
+//  }
 
   /**
    * Open connections to the underlying database
    */
   public void open() {
-    mongoClient = new MongoClient(host, port);
+    //mongoClient = new MongoClient(host, port);
+
     metadataDb = mongoClient.getDB(dbName);
+    logger.info("Mongodb session create succesfully : "+metadataDb.getName());
   }
 
   /**

@@ -13,6 +13,9 @@ import org.apache.thrift.TException;
 import org.jooq.DSLContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
@@ -25,12 +28,14 @@ import java.util.Map;
  *
  * For documentation on the API methods, see the ModelDB.thrift file.
  */
+//@Configuration
 public class ModelDbServer implements ModelDBService.Iface {
 
   protected  final Logger logger=LoggerFactory.getLogger(ModelDbServer.class);
   /**
    * The database context.
    */
+  @Autowired
   private DSLContext ctx;
 
   /**
@@ -50,25 +55,26 @@ public class ModelDbServer implements ModelDBService.Iface {
    * @param metadataDbType - type of DB used for metadata
    */
   public ModelDbServer(
-    String username, 
-    String password, 
-    String jdbcUrl, 
-    ModelDbConfig.DatabaseType dbType, 
-    String metadataDbHost, 
-    int metadataDbPort, 
-    String metadataDbName, 
+    String username,
+    String password,
+    String jdbcUrl,
+    ModelDbConfig.DatabaseType dbType,
+    String metadataDbHost,
+    int metadataDbPort,
+    String metadataDbName,
     ModelDbConfig.MetadataDbType metadataDbType) {
     try {
       this.ctx = ContextFactory.create(username, password, jdbcUrl, dbType);
-      this.metadataDb = ContextFactory.createMetadataDb(metadataDbHost, 
+      this.metadataDb = ContextFactory.createMetadataDb(metadataDbHost,
         metadataDbPort, metadataDbName, metadataDbType);
     } catch (Exception e) {
       e.printStackTrace();
     }
   }
 
-  public ModelDbServer(DSLContext ctx) {
+  public ModelDbServer(DSLContext ctx, edu.mit.csail.db.ml.server.storage.metadata.MongoMetadataDb metadataDb) {
     this.ctx = ctx;
+    this.metadataDb=metadataDb;
   }
 
   public int testConnection() throws TException {

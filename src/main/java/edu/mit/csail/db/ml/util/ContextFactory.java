@@ -63,7 +63,8 @@ public class ContextFactory {
     ModelDbConfig.MetadataDbType dbType) {
     switch (dbType) {
       case MONGODB: 
-        MetadataDb db = new MongoMetadataDb(host, port, name);
+//        MetadataDb db = new MongoMetadataDb(host, port, name);
+        MetadataDb db = new MongoMetadataDb();
         db.open();
         return db;
     }

@@ -2,7 +2,6 @@ package edu.mit.csail.db.ml.main;
 
 import edu.mit.csail.db.ml.conf.ModelDbConfig;
 import edu.mit.csail.db.ml.server.ModelDbServer;
-import edu.mit.csail.db.ml.util.ContextFactory;
 import modeldb.ModelDBService;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocolFactory;
@@ -13,6 +12,9 @@ import org.apache.thrift.transport.TServerTransport;
 import org.apache.thrift.transport.TTransportFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 /**
  * Main entry point of of the ModelDB Server.
@@ -20,13 +22,28 @@ import org.slf4j.LoggerFactory;
  * When you execute this file, you can include the following command line arguments:
  * (optional) --conf [path_to_conf_file]
  */
+@Configuration
+@Component
 public class Main {
+
+  @Value("${spring.datasource.url}")
+  private String url;
+
+  @Value("${spring.datasource.username}")
+  private String userName;
+
+  @Value("${spring.datasource.password}")
+  private  String password;
+
+
   protected  final static Logger logger=LoggerFactory.getLogger(Main.class);
-  public static void main(String[] args) throws Exception {
+  public  void main(String[] args) throws Exception {
     // Read the configuration. This uses the default configuration if no configuration is given in the
     // command line arguments.
     ModelDbConfig config = ModelDbConfig.parse(args);
 
+
+    logger.info("username: "+userName+ " pwd :"+password+ " url : "+url );
     logger.info(config.dbUser+config.dbType+config.dbPassword+config.jbdcUrl);
     // Attempt to launch the server.
     try {
@@ -38,11 +55,15 @@ public class Main {
 
       // Create a multi-threaded server. Process requests with an instance of
       // ModelDbServer.
+//      config.dbUser,
+//              config.dbPassword,
+//              config.jbdcUrl,
+//              config.dbType,
       TThreadPoolServer.Args serverArgs = new TThreadPoolServer.Args(transport)
         .processor(new ModelDBService.Processor<ModelDbServer>(new ModelDbServer(
-          config.dbUser,
-          config.dbPassword,
-          config.jbdcUrl,
+                userName,
+                password,
+                url,
           config.dbType,
           config.metadataDbHost,
           config.metadataDbPort,

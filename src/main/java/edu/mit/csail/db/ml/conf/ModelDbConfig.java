@@ -4,6 +4,9 @@ package edu.mit.csail.db.ml.conf;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 import org.apache.commons.cli.*;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 
@@ -15,6 +18,8 @@ import java.io.File;
  *
  * This is a SINGLETON class.
  */
+//@Component
+//@Configuration
 public class ModelDbConfig {
   /**
    * The type of the database. Currently, only SQLite is supported. However, JOOQ (the library used to interact with
@@ -42,26 +47,31 @@ public class ModelDbConfig {
   /**
    * The username used to connect to the database.
    */
+  @Value("${spring.datasource.username}")
   public final String dbUser;
 
   /**
    * The password used to connect to the database.
    */
+  @Value("${spring.datasource.password}")
   public final String dbPassword;
 
   /**
    * The hostname to launch the Thrift server.
    */
+  @Value("${spring.thrift.host")
   public final String thriftHost;
 
   /**
    * The type of the database to connect to.
    */
-  public final DatabaseType dbType;
+
+  public final DatabaseType dbType=DatabaseType.MYSQL;
 
   /**
    * The JDBC URL of the database.
    */
+  @Value("${spring.datasource.url}")
   public final String jbdcUrl;
 
   /**
@@ -72,21 +82,25 @@ public class ModelDbConfig {
   /**
    * The port on which to launch the Thrift server.
    */
+  @Value("${spring.thrift.port}")
   public final int thriftPort;
 
   /* *
    * Host for metadataDb
    */
+  @Value("${spring.data.mongodb.host}")
   public final String metadataDbHost;
 
   /**
    * Port on which metadataDb is running
    */
+  @Value("${spring.data.mongodb.port}")
   public final int metadataDbPort;
 
   /**
    * Name of database inside metadataDb
    */
+  @Value("${spring.data.mongodb.database}")
   public final String metadataDbName;
 
   /**
@@ -97,14 +111,16 @@ public class ModelDbConfig {
   /**
    * Type of metadata database
    */
-  public final MetadataDbType metadataDbType;
+
+  public final MetadataDbType metadataDbType=MetadataDbType.MONGODB;
 
   /**
    * ModelDB Server allows the user to store models in a filesystem. ModelDB Server generates
    * filepaths at which the user can store their models. Each filename is prefixed with the given
    * prefix string to create the filepath.
    */
-  public final String fsPrefix;
+//  @Value("${fs.prefix }")
+  public final String fsPrefix="/tmp/";
 
   /**
    * Creates a configuration object.
@@ -134,18 +150,21 @@ public class ModelDbConfig {
     this.metadataDbPort = Integer.parseInt(metadataDbPort);
     this.metadataDbName = metadataDbName;
     this.metadataDbTestDbName = metadataDbTestDbName;
-    this.fsPrefix = fsPrefix;
+//    this.fsPrefix = fsPrefix;
 
-    switch (databaseType) {
-      case "sqlite": this.dbType = DatabaseType.SQLITE; break;
-      case "mysql":this.dbType=DatabaseType.MYSQL;break;
-      default: throw new IllegalArgumentException("Not a value databaseType");
-    }
+//    this.dbType=DatabaseType.MYSQL;
+//    this.metadataDbType=MetadataDbType.MONGODB;
 
-    switch (metadataDbType) {
-      case "mongodb": this.metadataDbType = MetadataDbType.MONGODB; break;
-      default: throw new IllegalArgumentException("Not a value metadataDbType");
-    }
+//    switch (databaseType) {
+//      case "sqlite": this.dbType = DatabaseType.SQLITE; break;
+//      case "mysql":this.dbType=DatabaseType.MYSQL;break;
+//      default: throw new IllegalArgumentException("Not a value databaseType");
+//    }
+//
+//    switch (metadataDbType) {
+//      case "mongodb": this.metadataDbType = MetadataDbType.MONGODB; break;
+//      default: throw new IllegalArgumentException("Not a value metadataDbType");
+//    }
   }
 
   /**
