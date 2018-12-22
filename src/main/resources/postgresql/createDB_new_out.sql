@@ -2,7 +2,7 @@
 -- ModelDB stores multiple projects, each of which contains multiple
 -- experiments, each of which contains multiple experiment runs.
 -- Each event and primitive (DataFrame, Transformer, TransformerSpec) is
--- associated with an ExperimentRun.
+-- associated with an ExperimentRun.convert by sqlines
 DROP TABLE IF EXISTS Project;
 CREATE SEQUENCE Project_seq;
 
