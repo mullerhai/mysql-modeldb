@@ -1,0 +1,10 @@
+-- CREATE DATABASE modeldb;
+
+-- CREATE USER muller CREATEDB LOGIN PASSWORD '7104';
+-- GRANT ALL ON DATABASE modeldb TO muller;
+
+
+Sqlines  64
+ ./sqlines64  -s=mysql -t=postgresql -in=createDB_new.sql
+
+psql -U muller modeldb < /opt/sqlines/bin/createDB_new_out.sql

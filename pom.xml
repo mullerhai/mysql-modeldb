@@ -175,6 +175,12 @@
             <version>${spring.cloud.starter.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.5</version>
+        </dependency>
 
     </dependencies>
 
@@ -215,7 +221,7 @@
         <profile>
             <!-- mvn -PDBGen generate-sources -->
             <id>DBGen</id>
-
+            <!--<id>postgresql</id>-->
             <build>
                 <plugins>
                     <plugin>
@@ -230,30 +236,43 @@
                             </execution>
                         </executions>
                         <dependencies>
+                            <!--<dependency>-->
+                                <!--<groupId>mysql</groupId>-->
+                                <!--<artifactId>mysql-connector-java</artifactId>-->
+                                <!--<version>5.1.46</version>-->
+                            <!--</dependency>-->
                             <dependency>
-                                <groupId>mysql</groupId>
-                                <artifactId>mysql-connector-java</artifactId>
-                                <version>5.1.46</version>
+                                <groupId>org.postgresql</groupId>
+                                <artifactId>postgresql</artifactId>
+                                <version>42.2.5</version>
                             </dependency>
                         </dependencies>
                         <configuration>
                             <jdbc>
-                                <driver>com.mysql.jdbc.Driver</driver>
-                                <url>jdbc:mysql://cdhcode:3306/modeldb_test</url>
+                                <driver>org.postgresql.Driver</driver>
+                                <url>jdbc:postgresql://cdhcode:5432/modeldb</url>
                                 <user>muller</user>
                                 <password>7104</password>
                             </jdbc>
                             <generator>
+
+                                <!--<name>org.jooq.util.DefaultGenerator</name>-->
                                 <database>
-                                    <name>org.jooq.util.mysql.MySQLDatabase</name>
+                                    <name>org.jooq.meta.postgres.PostgresDatabase</name>
                                     <includes>.*</includes>
-                                    <excludes></excludes>
-                                    <inputSchema>modeldb_test</inputSchema>
+                                    <excludes />
+                                    <!--<inputSchema>modeldb</inputSchema>-->
                                 </database>
+                                <!--<database>-->
+                                    <!--<name>org.jooq.util.postgres.PostgresDatabase</name>-->
+                                    <!--<includes>.*</includes>-->
+                                    <!--<excludes></excludes>-->
+                                    <!--<inputSchema>modeldb</inputSchema>-->
+                                <!--</database>-->
                                 <target>
                                     <!-- The destination package of your generated classes (within the
                                         destination directory) -->
-                                    <packageName>jooq.mysql.gen</packageName>
+                                    <packageName>jooq.postgresql.gen</packageName>
                                     <!-- The destination directory of your generated classes -->
                                     <directory>target/generated-sources/jooq</directory>
                                 </target>

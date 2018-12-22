@@ -27,7 +27,8 @@ public class ModelDbConfig {
    */
   public enum DatabaseType {
     SQLITE,
-    MYSQL
+    MYSQL,
+    POSTGRESQL
   }
 
   public enum MetadataDbType {
@@ -66,7 +67,7 @@ public class ModelDbConfig {
    * The type of the database to connect to.
    */
 
-  public final DatabaseType dbType=DatabaseType.MYSQL;
+  public final DatabaseType dbType=DatabaseType.POSTGRESQL;
 
   /**
    * The JDBC URL of the database.

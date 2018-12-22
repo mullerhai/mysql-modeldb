@@ -93,7 +93,7 @@ public class ThriftConfig {
         TThreadPoolServer server = new TThreadPoolServer(serverArgs);
 
         // Launch the server.
-        System.out.printf("Starting the simple server on port %d...\n", thrift_post);
+        logger.info("Starting the simple server on port %d...\n", thrift_post);
         server.serve();
 
         return server;
